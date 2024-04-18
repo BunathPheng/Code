@@ -1,0 +1,113 @@
+
+main {
+  display: grid;
+  place-content: center;
+  gap: 15px;
+  & .box {
+    display: grid;
+    place-content: center;
+    font-size: 3rem;
+    width: 200px;
+    height: 200px;
+  }
+  & .box:nth-child(1) {
+    background-color: pink;
+    /* transform: translateX(100px);
+    transform: translateY(100px); */
+    /* This short hand */
+    /* transform: translate(100px,100px); */
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: slide;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  & .box:nth-child(2) {
+    background-color: lightblue;
+    /* transform: rotate(160deg); */
+    /* transform: rotate(-50deg); */
+    animation: slide;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction:reverse;
+    animation-timing-function: ease-in;
+    /* animation-fill-mode: forwards; */
+  }
+  & .box:nth-child(3) {
+    background-color: lightgreen;
+    /* transform: scale(1.5); */
+    animation: rote 2s infinite ease-in-out;
+  }
+  & .box:hover{
+    background-color: coral;
+    border-radius: 20px ;
+    transform: scale(1.5);
+    transform: rotate(100deg);
+    transform: skewX(50deg);
+  }
+  & .box{
+    transition-property: all;
+    transition-duration: 2s;
+    transition-delay: 1s;
+    transition-timing-function: ease-in;
+    /* transition: all 2s ease-in-out 1s; */
+  }
+  & section {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+  }
+  & .item {
+    display: flex;
+    background-color: lightcoral;
+    width: 500px;
+    height: 500px;
+  }
+  
+  
+}
+@keyframes slide{
+    0% {
+      transform: scale(0) ;
+    }
+    10%{
+      transform: scale(0.1);
+    }
+    35%
+    {
+      transform: scale(1.5) translateX(200px);
+    }
+    75%
+    {
+      transform: translateX(-200px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  
+}
+@keyframes rote{
+  0% {
+    transform: translateX(0) ;
+    border-radius: 10%;
+  }
+  10%{
+    transform: scale(1.2) translateX(100px); 
+    border-radius: 30%;
+  }
+  35%
+  {
+    transform: scale(1.5) translateX(200px);
+    border-radius: 40%;
+  }
+  75%
+  {
+    transform: scale(1.0) translateX(300px);
+    border-radius: 40%;
+  }
+  100% {
+    transform: scale(1.9) translateX(-100px);
+    border-radius: 100%;
+  }
+
+}
